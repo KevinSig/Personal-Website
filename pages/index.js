@@ -1,7 +1,7 @@
 import Head from 'next/head'
 
-import styles from '../styles/Home.module.css'
 import styled from 'styled-components'
+import NavigationBar from '../components/NavigationBar'
 
 const Main = styled.main`
   flex: 1;
@@ -43,8 +43,6 @@ const TopContainer = styled.div`
 `
 
 const BottomContainer = styled(TopContainer)`
-  /* height: 100%; */
-
   background-color: transparent;
   height: 100%;
 `
@@ -62,8 +60,9 @@ export default function Home() {
       </Head>
 
       <Main>
-        <TopContainer>amir</TopContainer>
-        {/* <BottomContainer>something else</BottomContainer> */}
+        <TopContainer>
+          <NavigationBar />
+        </TopContainer>
         <BottomContainer>amir</BottomContainer>
       </Main>
 
