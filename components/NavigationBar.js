@@ -9,13 +9,13 @@ const Container = styled.div`
   align-items: center;
   justify-content: space-evenly;
   width: 33%;
+  
 `
 
 function NavigationBar() {
   return (
     <Container>
       <a>About</a>
-
       <Link href='/blog'>
         <a>Blog</a>
       </Link>

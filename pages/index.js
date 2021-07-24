@@ -49,16 +49,7 @@ const BottomContainer = styled(TopContainer)`
 
 export default function Home() {
   return (
-    <Container>
-      <Head>
-        <title>Amir Sigari</title>
-        <meta name='description' content='Your Boy Amir' />
-        <link
-          rel='icon'
-          href='https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/apple/285/waving-hand_1f44b.png'
-        />
-      </Head>
-
+    <>
       <Main>
         <TopContainer>
           <NavigationBar />
@@ -66,11 +57,7 @@ export default function Home() {
         <BottomContainer>amir</BottomContainer>
       </Main>
 
-      <Footer>
-        <a>
-          Powered by&nbsp;<b>Covfefe</b>
-        </a>
-      </Footer>
-    </Container>
+
+    </>
   )
 }
