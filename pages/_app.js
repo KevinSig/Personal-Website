@@ -41,7 +41,7 @@ const Container = styled.div`
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  
+
   height: 100vh;
   width: 100vw;
   background-color: rgba(196, 196, 196, 0.2);
@@ -58,7 +58,10 @@ export default function App({ Component, pageProps }) {
             <meta name='description' content='Your Boy Amir' />
             <link
               rel='icon'
-              href='https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/apple/285/waving-hand_1f44b.png'
+              type='image/png'
+              sizes='16x16'
+              // href='https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/apple/285/waving-hand_1f44b.png'
+              href='/logoF.png'
             />
           </Head>
 
