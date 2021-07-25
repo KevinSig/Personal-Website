@@ -1,5 +1,3 @@
-import Head from 'next/head'
-
 import styled from 'styled-components'
 import NavigationBar from '../components/NavigationBar'
 
@@ -11,26 +9,6 @@ const Main = styled.main`
   align-items: center;
   /* background-color: red; */
   width: 100%;
-`
-const Container = styled.div`
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  width: 100vw;
-  background-color: rgba(196, 196, 196, 0.2);
-`
-
-const Footer = styled.footer`
-  width: 100%;
-  height: 50px;
-  border-top: 1px solid #eaeaea;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: transparent;
 `
 
 const TopContainer = styled.div`
@@ -49,15 +27,11 @@ const BottomContainer = styled(TopContainer)`
 
 export default function Home() {
   return (
-    <>
-      <Main>
-        <TopContainer>
-          <NavigationBar />
-        </TopContainer>
-        <BottomContainer>amir</BottomContainer>
-      </Main>
-
-
-    </>
+    <Main>
+      <TopContainer>
+        <NavigationBar />
+      </TopContainer>
+      <BottomContainer>amir</BottomContainer>
+    </Main>
   )
 }

@@ -1,6 +1,5 @@
 import { createGlobalStyle, ThemeProvider } from 'styled-components'
 import Head from 'next/head'
-
 import styled from 'styled-components'
 
 const GlobalStyle = createGlobalStyle`
@@ -8,18 +7,13 @@ html,
 body {
   padding: 0;
   margin: 0;
-  
-  
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-
 }
-
 a {
   color: inherit;
   text-decoration: none;
 }
-
 * {
   box-sizing: border-box;
 }
@@ -47,8 +41,7 @@ const Container = styled.div`
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
-  /* align-items: center; */
+  
   height: 100vh;
   width: 100vw;
   background-color: rgba(196, 196, 196, 0.2);
