@@ -16,10 +16,9 @@ const Container = styled.div`
 function NavigationBar() {
   return (
     <Container>
-      <Link href='/blog'>
+      <Link href='/'>
         <a>
-
-        <Image src={logo} />
+          <Image src={logo} />
         </a>
       </Link>
       <a>About</a>
