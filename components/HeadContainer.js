@@ -53,7 +53,6 @@ const InnerCircle = styled.div`
   width: 100px;
   border-radius: 50%;
 
-  
   display: flex;
   justify-content: center;
   align-items: center;
@@ -64,9 +63,7 @@ function HeadContainer({ toggleTheme }) {
   return (
     <Box onClick={toggleTheme}>
       <InnerCircle>
-        
-          <Image width='100px' height='100px' src={Head} />
-        
+        <Image width='100px' height='100px' src={Head} />
       </InnerCircle>
     </Box>
   )

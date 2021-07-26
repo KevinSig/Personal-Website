@@ -2,7 +2,7 @@ import { createGlobalStyle, ThemeProvider } from 'styled-components'
 
 import Layout from '../components/Layout'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 const GlobalStyle = createGlobalStyle`
 html,
@@ -41,15 +41,29 @@ const themes = {
 }
 
 export default function App({ Component, pageProps }) {
-  const [theme, setTheme] = useState('light')
+  const [theme, setTheme] = useState('dark')
+  const [time, setTime] = useState(0)
   const toggleTheme = () => {
     theme == 'light' ? setTheme('dark') : setTheme('light')
-    console.log(theme)
   }
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setTime(time + 1)
+      let number = Math.floor(Math.random() * 15 + 1)
+      console.log(number)
+      if (number === 5) {
+        toggleTheme()
+      }
+    }, 1000)
+    return () => {
+      clearTimeout(timer)
+    }
+  }, [time])
 
   return (
     <>
-      <GlobalStyle  theme={themes[theme]}/>
+      <GlobalStyle theme={themes[theme]} />
       <ThemeProvider theme={themes[theme]}>
         <Layout toggleTheme={toggleTheme}>
           <Component {...pageProps} />
