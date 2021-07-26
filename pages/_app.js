@@ -2,6 +2,8 @@ import { createGlobalStyle, ThemeProvider } from 'styled-components'
 
 import Layout from '../components/Layout'
 
+import { useState } from 'react'
+
 const GlobalStyle = createGlobalStyle`
 html,
 body {
@@ -20,18 +22,33 @@ a {
 
 `
 
-const theme = {
-  colors: {
-    primary: '#0070f3',
-  },
+const darkTheme = {
+  backgroundColor: 'rgba(196, 196, 196, 0.2)',
+  logo: '#232629',
+}
+
+const lightTheme = {
+  backgroundColor: 'rgba(237, 28, 36, 0.2)',
+  logo: '#ED1C24',
+}
+
+const themes = {
+  light: lightTheme,
+  dark: darkTheme,
 }
 
 export default function App({ Component, pageProps }) {
+  const [theme, setTheme] = useState('light')
+  const toggleTheme = () => {
+    theme == 'light' ? setTheme('dark') : setTheme('light')
+    console.log(theme)
+  }
+
   return (
     <>
       <GlobalStyle />
-      <ThemeProvider theme={theme}>
-        <Layout>
+      <ThemeProvider theme={themes[theme]}>
+        <Layout toggleTheme={toggleTheme}>
           <Component {...pageProps} />
         </Layout>
       </ThemeProvider>

@@ -2,6 +2,9 @@ import Head from 'next/head'
 import styled, { keyframes } from 'styled-components'
 
 import NavigationBar from './NavigationBar'
+
+import HeadContainer from './HeadContainer'
+
 const Footer = styled.footer`
   width: 100%;
   height: 50px;
@@ -14,14 +17,15 @@ const Footer = styled.footer`
   margin-top: auto;
 `
 
-const Container = styled.div`
+const Wrapper = styled.div`
   min-height: 100vh;
   display: flex;
   flex-direction: column;
 
   height: 100vh;
   width: 100vw;
-  background-color: rgba(196, 196, 196, 0.2);
+  background-color: ${props => props.theme.backgroundColor};
+  transition: background-color 0.5s ease-in-out;
 `
 
 const Main = styled.main`
@@ -79,21 +83,17 @@ const Wave = styled.div`
     fill: white;
   }
 `
-export default function App({ children }) {
+
+export default function App({ children, toggleTheme }) {
   return (
-    <Container>
+    <Wrapper>
       <Head>
         <title>Amir Sigari</title>
         <meta name='description' content='Your Boy Amir' />
-        <link
-          rel='icon'
-          type='image/png'
-          sizes='16x16'
-          // href='https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/apple/285/waving-hand_1f44b.png'
-          href='/logoF.png'
-        />
+        <link rel='icon' type='image/png' sizes='16x16' href='/another.svg' />
       </Head>
-
+      <HeadContainer toggleTheme={toggleTheme} />
+      {/* <button onClick={toggleTheme}>hello, another button here</button> */}
       <Main>
         <TopContainer>
           <NavigationBar />
@@ -116,6 +116,6 @@ export default function App({ children }) {
           Powered by&nbsp;<b>Covfefe</b>
         </a>
       </Footer>
-    </Container>
+    </Wrapper>
   )
 }

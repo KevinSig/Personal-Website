@@ -1,5 +1,10 @@
-import styled, { keyframes } from 'styled-components'
+import HeadContainer from '../components/HeadContainer'
 
 export default function Home() {
-  return <div>amir was here</div>
+  return (
+    <div>
+      
+      amir was here
+    </div>
+  )
 }
