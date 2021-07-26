@@ -15,6 +15,47 @@ const Path = styled.path`
   transition: fill 0.5s ease-in-out;
 `
 
+const Text = styled.a`
+  font-family: ${props => props.theme.fontFamily};
+  :hover {
+    cursor: pointer;
+  }
+`
+const Underline = styled(Text)`
+  line-height: 36px;
+  letter-spacing: 0.1em;
+  position: relative;
+  border: 2px solid transparent;
+  display: inline-block;
+  :after {
+    width: 0%;
+    height: 2px;
+    display: block;
+    background-color: #ed1c24;
+    content: ' ';
+    position: absolute;
+    top: 34px;
+    left: 50%;
+    -webkit-transition: left 0.2s cubic-bezier(0.165, 0.84, 0.44, 1),
+      width 0.2s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transition: left 0.2s cubic-bezier(0.165, 0.84, 0.44, 1),
+      width 0.2s cubic-bezier(0.165, 0.84, 0.44, 1);
+  }
+
+  :hover {
+    :after {
+      width: 100%;
+      height: 2px;
+      display: block;
+      background-color: #ed1c24;
+      content: ' ';
+      position: absolute;
+      top: 34px;
+      left: 0;
+    }
+  }
+`
+
 function NavigationBar() {
   return (
     <Container>
@@ -38,11 +79,11 @@ function NavigationBar() {
           </svg>
         </a>
       </Link>
-      <a>About</a>
+      <Underline>About</Underline>
       <Link href='/blog'>
-        <a>Blog</a>
+        <Underline>Blog</Underline>
       </Link>
-      <a>Gooodies</a>
+      <Underline>Gooodies</Underline>
     </Container>
   )
 }

@@ -11,6 +11,7 @@ body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    
 }
 a {
   color: inherit;
@@ -18,6 +19,7 @@ a {
 }
 * {
   box-sizing: border-box;
+  
 }
 
 `
@@ -30,6 +32,7 @@ const darkTheme = {
 const lightTheme = {
   backgroundColor: 'rgba(237, 28, 36, 0.2)',
   logo: '#ED1C24',
+  fontFamily: 'Permanent Marker',
 }
 
 const themes = {
@@ -46,7 +49,7 @@ export default function App({ Component, pageProps }) {
 
   return (
     <>
-      <GlobalStyle />
+      <GlobalStyle  theme={themes[theme]}/>
       <ThemeProvider theme={themes[theme]}>
         <Layout toggleTheme={toggleTheme}>
           <Component {...pageProps} />

@@ -9,6 +9,7 @@ const Box = styled.div`
   top: 20%;
   left: 50%;
   display: flex;
+  margin-left: -55px;
   width: 110px;
   height: 110px;
   border-radius: 50%;
@@ -33,7 +34,7 @@ const Box = styled.div`
     left: 0;
     width: 100%;
     height: 100%;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     opacity: 0;
     -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
     transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
@@ -52,6 +53,7 @@ const InnerCircle = styled.div`
   width: 100px;
   border-radius: 50%;
 
+  
   display: flex;
   justify-content: center;
   align-items: center;
@@ -62,7 +64,9 @@ function HeadContainer({ toggleTheme }) {
   return (
     <Box onClick={toggleTheme}>
       <InnerCircle>
-        <Image width='100px' height='100px' src={Head} />
+        
+          <Image width='100px' height='100px' src={Head} />
+        
       </InnerCircle>
     </Box>
   )

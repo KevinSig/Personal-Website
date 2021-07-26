@@ -1,8 +1,7 @@
 import Head from 'next/head'
+import Link from 'next/link'
 import styled, { keyframes } from 'styled-components'
-
 import NavigationBar from './NavigationBar'
-
 import HeadContainer from './HeadContainer'
 
 const Footer = styled.footer`
@@ -83,6 +82,10 @@ const Wave = styled.div`
     fill: white;
   }
 `
+const Text = styled.a`
+  font-family: 'Permanent Marker';
+  color: #ed1c24;
+`
 
 export default function App({ children, toggleTheme }) {
   return (
@@ -91,6 +94,10 @@ export default function App({ children, toggleTheme }) {
         <title>Amir Sigari</title>
         <meta name='description' content='Your Boy Amir' />
         <link rel='icon' type='image/png' sizes='16x16' href='/another.svg' />
+        <link
+          href='https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap'
+          rel='stylesheet'
+        />
       </Head>
       <HeadContainer toggleTheme={toggleTheme} />
       {/* <button onClick={toggleTheme}>hello, another button here</button> */}
@@ -112,9 +119,11 @@ export default function App({ children, toggleTheme }) {
       </Main>
 
       <Footer>
-        <a>
-          Powered by&nbsp;<b>Covfefe</b>
-        </a>
+        <Link href='https://en.wikipedia.org/wiki/Covfefe'>
+          <a style={{ fontSize: '12px' }}>
+            Powered by&nbsp;<Text>Covfefe</Text>
+          </a>
+        </Link>
       </Footer>
     </Wrapper>
   )
