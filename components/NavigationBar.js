@@ -9,6 +9,7 @@ const Container = styled.div`
   align-items: center;
   justify-content: space-evenly;
   width: 33%;
+  padding-top: 32px;
 `
 
 const Path = styled.path`

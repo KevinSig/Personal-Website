@@ -24,7 +24,7 @@ const Wrapper = styled.div`
   flex-direction: column;
   width: 100vw;
   background-color: ${props => props.theme.backgroundColor};
-  
+
   transition: background-color 0.5s ease-in-out;
 `
 
@@ -33,10 +33,9 @@ const Main = styled.main`
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  
+
   width: 100%;
   height: 100%;
-  
 `
 
 const TopContainer = styled(motion.div)`
@@ -46,16 +45,13 @@ const TopContainer = styled(motion.div)`
   align-items: center;
   justify-content: center;
   width: 100%;
-
-  /* background-color: yellow; */
+  height: 96px;
 `
 
 const BottomContainer = styled(TopContainer)`
-  
   background-color: transparent;
   height: 100%;
   overflow: hidden;
-  
 `
 
 const thisWave = keyframes`
@@ -75,17 +71,12 @@ const Wave = styled.div`
   overflow: hidden;
   line-height: 0;
   position: relative;
-
-  /* transform: rotate(180deg); */
-
   svg {
     position: relative;
     display: block;
-    /* width: calc(200% + 1.3px); */
-    width: 400%;
-    /* animation: ${thisWave} ease-in-out 5s infinite; */
+    width: 500%;
     animation: ${thisWave} ease-in-out 9s infinite;
-    height: 130px;
+    height: 180px;
   }
   path {
     fill: white;
@@ -97,13 +88,11 @@ const Text = styled.a`
 `
 
 const HeadHolder = styled(motion.div)`
-  
   display: flex;
-  
   align-items: center;
   justify-content: center;
   position: absolute;
-  top: 56px;
+  top: 88px;
   left: 50%;
   margin-left: -55px;
 `
@@ -134,12 +123,10 @@ export default function App({ children, toggleTheme }) {
           >
             <path d='M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z'></path>
           </svg>
-
         </Wave>
         <HeadHolder>
-            <HeadContainer toggleTheme={toggleTheme} />
-          </HeadHolder>
-
+          <HeadContainer toggleTheme={toggleTheme} />
+        </HeadHolder>
 
         <AnimatePresence>
           <BottomContainer>{children}</BottomContainer>

@@ -6,16 +6,15 @@ import Head from '../public/headshot.png'
 import { motion } from 'framer-motion'
 
 const Box = styled(motion.div)`
-  
   display: flex;
-  
-  width: 110px;
-  height: 110px;
+
+  width: 90px;
+  height: 90px;
   border-radius: 50%;
   background-color: #fff;
   align-items: center;
   justify-content: center;
-  
+
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
   :hover {
     cursor: pointer;
@@ -24,7 +23,7 @@ const Box = styled(motion.div)`
   -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
   transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
 
- :after {
+  :after {
     content: '';
     border-radius: 50%;
     position: absolute;
@@ -44,12 +43,12 @@ const Box = styled(motion.div)`
     :after {
       opacity: 1;
     }
-  } 
+  }
 `
 
 const InnerCircle = styled.div`
-  height: 100px;
-  width: 100px;
+  height: 80px;
+  width: 80px;
   border-radius: 50%;
 
   display: flex;
