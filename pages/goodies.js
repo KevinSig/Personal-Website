@@ -125,7 +125,7 @@ function Home({ goodiesPage }) {
       </TitleContainer>
       <Grid>
         {colors.map(color => (
-          <LogoContainer>
+          <LogoContainer key={color}>
             <svg
               width='81'
               height='31'
