@@ -19,7 +19,6 @@ a {
 }
 * {
   box-sizing: border-box;
-  
 }
 
 `
@@ -30,7 +29,7 @@ const darkTheme = {
 }
 
 const lightTheme = {
-  backgroundColor: 'rgba(237, 28, 36, 0.2)',
+  backgroundColor: 'rgba(237, 28, 36, 0.05)',
   logo: '#ED1C24',
   fontFamily: 'Permanent Marker',
 }
@@ -50,8 +49,7 @@ export default function App({ Component, pageProps }) {
   useEffect(() => {
     const timer = setTimeout(() => {
       setTime(time + 1)
-      let number = Math.floor(Math.random() * 15 + 1)
-      console.log(number)
+      let number = Math.floor(Math.random() * 100 + 1)
       if (number === 5) {
         toggleTheme()
       }
@@ -63,7 +61,7 @@ export default function App({ Component, pageProps }) {
 
   return (
     <>
-      <GlobalStyle theme={themes[theme]} />
+      <GlobalStyle />
       <ThemeProvider theme={themes[theme]}>
         <Layout toggleTheme={toggleTheme}>
           <Component {...pageProps} />

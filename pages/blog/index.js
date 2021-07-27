@@ -4,6 +4,7 @@ import Head from 'next/head'
 import BlogCard from '../../components/BlogCard'
 import styled from 'styled-components'
 
+
 export async function getStaticProps() {
   //this is the function to grab data and inject that as props
   // this connects to the speci contentful space

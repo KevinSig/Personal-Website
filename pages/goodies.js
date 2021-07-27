@@ -3,28 +3,13 @@ import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import { motion } from 'framer-motion'
 import styled from 'styled-components'
 
-const Test = styled.div`
-  height: 100%;
-  display: flex;
+
+
+
+const Wrapper = styled(motion.div)`
   width: 50%;
   min-width: 400px;
-  align-items: center;
-  position: relative;
-  overflow-y: scroll;
-  background-color: transparent;
-  ::-webkit-scrollbar {
-    display: none;
-  }
-`
-const Wrapper = styled(motion.div)`
-  display: flex;
-  flex-direction: column;
   height: 100%;
-  width: 100%;
-  justify-content: flex-start;
-
-  margin: 0px;
-  padding: 0px;
 `
 
 const TitleContainer = styled(motion.div)`
@@ -67,29 +52,36 @@ export async function getStaticProps() {
     space: process.env.CONTENTFUL_SPACE_ID, //porcess is from the vs code itself
     accessToken: process.env.CONTENTFUL_ACCESS_KEY,
   })
-  const res = await client.getEntries({ content_type: 'aboutMe' })
+  const res = await client.getEntries({ content_type: 'goodiesPage' })
   return {
     props: {
-      aboutMe: res.items,
+      goodiesPage: res.items,
     },
     revalidate: 1,
   }
 }
 
-function Home({ aboutMe }) {
-  const { body, title } = aboutMe[0].fields
+function Home({ goodiesPage }) {
+  const { body, title } = goodiesPage[0].fields
 
+
+
+  
+    
   return (
-    <Test>
-      <Wrapper key={123}>
-        <TitleContainer variants={container} initial='hidden' animate='visible'>
-          <Title>{title}</Title>
-        </TitleContainer>
-        <motion.div variants={animateBody} initial='hidden' animate='visible'>
-          {documentToReactComponents(body)}
-        </motion.div>
-      </Wrapper>
-    </Test>
+    <Wrapper key={123}>
+      <TitleContainer
+        variants={container}
+        initial='hidden'
+        animate='visible'
+        
+      >
+        <Title>{title}</Title>
+      </TitleContainer>
+      <motion.div variants={animateBody} initial='hidden' animate='visible'>
+        {documentToReactComponents(body)}
+      </motion.div>
+    </Wrapper>
   )
 }
 
