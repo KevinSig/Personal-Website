@@ -24,7 +24,7 @@ export const getStaticPaths = async () => {
 
   return {
     paths: paths,
-    fallback: true, //dont return 404, instead return fallback , it re-runs get static props
+    fallback: false, //dont return 404, instead return fallback , it re-runs get static props
   }
 }
 
