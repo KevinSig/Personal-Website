@@ -11,7 +11,8 @@ const Box = styled(motion.div)`
   width: 90px;
   height: 90px;
   border-radius: 50%;
-  background-color: #fff;
+  /* background-color: #fff; */
+  background-color: ${props => props.theme.backg};
   align-items: center;
   justify-content: center;
 
