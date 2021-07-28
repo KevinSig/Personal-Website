@@ -15,7 +15,7 @@ const Box = styled(motion.div)`
   background-color: ${props => props.theme.backg};
   align-items: center;
   justify-content: center;
-
+  user-select: none;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
   :hover {
     cursor: pointer;
@@ -51,7 +51,7 @@ const InnerCircle = styled.div`
   height: 80px;
   width: 80px;
   border-radius: 50%;
-
+  user-select: none;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -59,6 +59,7 @@ const InnerCircle = styled.div`
 `
 
 const container = {
+  
   hidden: { opacity: 0 },
   show: {
     opacity: 1,

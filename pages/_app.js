@@ -42,6 +42,7 @@ const themes = {
 export default function App({ Component, pageProps }) {
   const [theme, setTheme] = useState('dark')
   const [time, setTime] = useState(0)
+  
   const toggleTheme = () => {
     theme == 'light' ? setTheme('dark') : setTheme('light')
   }

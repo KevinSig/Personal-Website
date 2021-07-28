@@ -23,6 +23,19 @@ const Title = styled.h1`
   font-family: ${props => props.theme.fontFamily};
 `
 
+const TestContainer = styled.div`
+  width: 81px;
+  height: 31px;
+  background-color: #f45b69;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'East Sea Dokdo', cursive;
+  font-size: 24px;
+  color: white;
+  border-radius: 60px 30px 60px 30px;
+`
+
 export async function getStaticProps() {
   const client = createClient({
     space: process.env.CONTENTFUL_SPACE_ID, //porcess is from the vs code itself
@@ -45,6 +58,8 @@ function Home({ aboutPage }) {
       <TitleContainer>
         <Title>{title}</Title>
       </TitleContainer>
+
+      <TestContainer>Amir</TestContainer>
       <div>{documentToReactComponents(body)}</div>
     </Wrapper>
   )
