@@ -3,7 +3,7 @@ import Link from 'next/link'
 import styled, { keyframes } from 'styled-components'
 import NavigationBar from './NavigationBar'
 import HeadContainer from './HeadContainer'
-
+import React from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 
 const Footer = styled.footer`
@@ -23,7 +23,7 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   width: 100vw;
-  background-color: ${props => props.theme.backgroundColor};
+  background-color: ${props => props.theme.color}20;
 
   transition: background-color 0.5s ease-in-out;
 `
@@ -83,8 +83,8 @@ const Wave = styled.div`
   }
 `
 const Text = styled.a`
-  font-family: 'Permanent Marker';
-  color: #ed1c24;
+  font-family: ${props => props.theme.font};
+  color: ${props => props.theme.color};
 `
 
 const HeadHolder = styled(motion.div)`
@@ -97,7 +97,13 @@ const HeadHolder = styled(motion.div)`
   margin-left: -55px;
 `
 
-export default function App({ children, toggleTheme }) {
+export default function App({
+  children,
+  toggleTheme,
+  colorTheme,
+  setColorTheme,
+  colors,
+}) {
   return (
     <Wrapper>
       <Head>
@@ -234,7 +240,13 @@ export default function App({ children, toggleTheme }) {
         </HeadHolder>
 
         <AnimatePresence>
-          <BottomContainer>{children}</BottomContainer>
+          <BottomContainer>
+            {React.cloneElement(children, {
+              colorTheme: colorTheme,
+              setColorTheme: setColorTheme,
+              colors: colors,
+            })}
+          </BottomContainer>
         </AnimatePresence>
         <Footer>
           <Link href='https://en.wikipedia.org/wiki/Covfefe'>

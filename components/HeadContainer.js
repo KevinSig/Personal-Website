@@ -12,7 +12,7 @@ const Box = styled(motion.div)`
   height: 90px;
   border-radius: 50%;
   /* background-color: #fff; */
-  background-color: ${props => props.theme.backg};
+  background-color: ${props => props.theme.color};
   align-items: center;
   justify-content: center;
   user-select: none;

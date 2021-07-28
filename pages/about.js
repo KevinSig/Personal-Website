@@ -18,9 +18,9 @@ const TitleContainer = styled.div`
 `
 
 const Title = styled.h1`
-  color: ${props => props.theme.logo};
+  color: ${props => props.theme.color};
   transition: all 0.5s ease-in-out;
-  font-family: ${props => props.theme.fontFamily};
+  font-family: ${props => props.theme.font};
 `
 
 const TestContainer = styled.div`

@@ -18,9 +18,9 @@ const TitleContainer = styled(motion.div)`
 `
 
 const Title = styled(motion.h1)`
-  color: ${props => props.theme.logo};
+  color: ${props => props.theme.color};
   transition: all 0.5s ease-in-out;
-  font-family: ${props => props.theme.fontFamily};
+  font-family: ${props => props.theme.font};
 `
 
 const container = {
@@ -99,14 +99,16 @@ const Logo = styled.div`
   font-family: ${props => props.font};
   font-size: 24px;
   color: white;
+  font-style: italic;
   border-radius: 60px 30px 60px 30px;
   transition: all 0.3s ease-in-out;
+  user-select: none;
 `
 const Container = styled.a`
   display: flex;
   align-items: center;
   justify-content: center;
-
+  user-select: none;
   :hover {
     cursor: pointer;
     ${Logo} {
@@ -116,35 +118,10 @@ const Container = styled.a`
     }
   }
 `
-function Home({ goodiesPage }) {
-  // const { body, title } = goodiesPage[0].fields
+function Home({ goodiesPage, colorTheme, setColorTheme, colors }) {
+  // console.log(colorTheme.font)
 
-  const colors = [
-    { id: 1, color: '#F45B69', font: 'East Sea Dokdo' },
-    { id: 2, color: '#EAD637', font: 'Magra' },
-    { id: 3, color: '#2D728F', font: 'Pacifico' },
-    { id: 4, color: '#6E7E85', font: 'PT Sans Caption' },
-    { id: 5, color: '#114B5F', font: 'Raleway' },
-    { id: 6, color: '#FF4F79', font: 'Montserrat' },
-    { id: 7, color: '#F35B04', font: 'Caveat' },
-    { id: 8, color: '#0081AF', font: 'Architects Daughter' },
-    { id: 9, color: '#B10F2E', font: 'Roboto' },
-    { id: 10, color: '#3B8EA5', font: 'Kaushan Script' },
-    { id: 11, color: '#886176', font: 'Carter One' },
-    { id: 12, color: '#A2D729', font: 'Gloria Hallelujah' },
-    { id: 13, color: '#94D1BE', font: 'ZCOOL KuaiLe' },
-    { id: 14, color: '#FF595E', font: 'Staatliches' },
-    { id: 15, color: '#407899', font: 'Amiri' },
-    { id: 16, color: '#ED1C24', font: 'Mplus 1p Bold' },
-    { id: 17, color: '#F08080', font: 'Press Start 2P' },
-    { id: 18, color: '#D62839', font: 'Anton' },
-    { id: 19, color: '#F21B3F', font: 'Fira Code' },
-    { id: 20, color: '#96E8BC', font: 'Pattaya' },
-    { id: 21, color: '#4ECDC4', font: 'Titan One' },
-    { id: 22, color: '#DE6449', font: 'Wire One' },
-    { id: 23, color: '#ED1C24', font: 'Permanent Marker' },
-    { id: 24, color: '#70CAD1', font: 'Grenze Gotisch' },
-  ]
+  // console.log(colorTheme.color)
 
   // const testColors = [
   //   '#F45B69',
@@ -180,9 +157,9 @@ function Home({ goodiesPage }) {
         <Title>Logo Styles</Title>
       </TitleContainer>
       <Grid>
-        {colors.map(style => (
-          <Container>
-            <Logo key={style.id} color={style.color} font={style.font}>
+        {colors.map(theme => (
+          <Container key={theme.id} onClick={() => setColorTheme(theme.id)}>
+            <Logo color={theme.color} font={theme.font}>
               Amir
             </Logo>
           </Container>
