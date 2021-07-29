@@ -14,7 +14,7 @@ const Container = styled.div`
 
 const Path = styled.path`
   /* fill: ${props => props.theme.logo}; */
-  
+
   transition: fill 0.5s ease-in-out;
 `
 
@@ -77,7 +77,7 @@ const Underline = styled(Text)`
 const Logo = styled.div`
   width: 81px;
   height: 31px;
-
+  font-style: italic;
   background-color: ${props => props.theme.color};
   display: flex;
   justify-content: center;
@@ -109,10 +109,8 @@ function NavigationBar() {
     <Container>
       <motion.div whileTap={{ scale: 0.9 }}>
         <Link href='/'>
-        <LogoContainer >
-            <Logo >
-              Amir
-            </Logo>
+          <LogoContainer>
+            <Logo>Amir</Logo>
           </LogoContainer>
         </Link>
       </motion.div>

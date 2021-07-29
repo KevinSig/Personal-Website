@@ -97,13 +97,7 @@ const HeadHolder = styled(motion.div)`
   margin-left: -55px;
 `
 
-export default function App({
-  children,
-  toggleTheme,
-  colorTheme,
-  setColorTheme,
-  colors,
-}) {
+export default function App({ children, colorTheme, setColorTheme, colors }) {
   return (
     <Wrapper>
       <Head>
@@ -236,7 +230,7 @@ export default function App({
           </svg>
         </Wave>
         <HeadHolder>
-          <HeadContainer toggleTheme={toggleTheme} />
+          <HeadContainer setColorTheme={setColorTheme} colors={colors} />
         </HeadHolder>
 
         <AnimatePresence>

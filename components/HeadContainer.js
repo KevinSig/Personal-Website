@@ -59,7 +59,6 @@ const InnerCircle = styled.div`
 `
 
 const container = {
-  
   hidden: { opacity: 0 },
   show: {
     opacity: 1,
@@ -69,10 +68,13 @@ const container = {
   },
 }
 
-function HeadContainer({ toggleTheme }) {
+function HeadContainer({ setColorTheme, colors }) {
+
+  
+
   return (
     <Box
-      onClick={toggleTheme}
+      // onClick={toggleTheme}
       whileTap={{ scale: 0.5 }}
       variants={container}
       initial='hidden'
