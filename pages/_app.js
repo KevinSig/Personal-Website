@@ -55,7 +55,7 @@ const colors = [
   { id: 12, color: '#94D1BE', font: 'ZCOOL KuaiLe' },
   { id: 13, color: '#FF595E', font: 'Staatliches' },
   { id: 14, color: '#407899', font: 'Amiri' },
-  { id: 15, color: '#ED1C24', font: 'Mplus 1p Bold' },
+  { id: 15, color: '#ED1C24', font: 'Ubuntu' },
   { id: 16, color: '#F08080', font: 'Press Start 2P' },
   { id: 17, color: '#D62839', font: 'Anton' },
   { id: 18, color: '#F21B3F', font: 'Fira Code' },

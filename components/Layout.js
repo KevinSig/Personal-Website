@@ -174,7 +174,7 @@ export default function App({ children, colorTheme, setColorTheme, colors }) {
           rel='stylesheet'
         ></link>
         <link
-          href='https://fonts.googleapis.com/css2?family=Mplus+1p+Bold&display=swap'
+          href='https://fonts.googleapis.com/css2?family=Ubuntu&display=swap'
           rel='stylesheet'
         ></link>
         <link
