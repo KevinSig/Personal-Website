@@ -69,12 +69,14 @@ const container = {
 }
 
 function HeadContainer({ setColorTheme, colors }) {
-
-  
+  const themeRandomizer = () => {
+    let number = Math.floor(Math.random() * colors.length)
+    setColorTheme(number)
+  }
 
   return (
     <Box
-      // onClick={toggleTheme}
+      onClick={() => themeRandomizer()}
       whileTap={{ scale: 0.5 }}
       variants={container}
       initial='hidden'

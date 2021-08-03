@@ -12,26 +12,10 @@ const Container = styled.div`
   padding-top: 32px;
 `
 
-const Path = styled.path`
-  /* fill: ${props => props.theme.logo}; */
-
-  transition: fill 0.5s ease-in-out;
-`
-
-// const LogoContainer = styled.a`
-//   margin-right: 16px;
-//   :hover {
-//     cursor: pointer;
-//     ${Path} {
-//       transition: opacity 0.3s ease-in-out;
-//       opacity: 0.8;
-//     }
-//   }
-// `
-
 const Text = styled.a`
   font-family: ${props => props.theme.font};
   text-align: center;
+
   user-select: none;
   margin: 0px 16px;
   :hover {
@@ -75,6 +59,7 @@ const Underline = styled(Text)`
 `
 
 const Logo = styled.div`
+  user-select: none;
   width: 81px;
   height: 31px;
   font-style: italic;
@@ -90,6 +75,7 @@ const Logo = styled.div`
   transition: all 0.3s ease-in-out;
 `
 const LogoContainer = styled.a`
+  user-select: none;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -99,7 +85,6 @@ const LogoContainer = styled.a`
     ${Logo} {
       transition: all 0.3s ease-in-out;
       opacity: 0.8;
-      background-color: black;
     }
   }
 `
@@ -107,13 +92,13 @@ const LogoContainer = styled.a`
 function NavigationBar() {
   return (
     <Container>
-      <motion.div whileTap={{ scale: 0.9 }}>
-        <Link href='/'>
-          <LogoContainer>
+      <Link href='/'>
+        <LogoContainer>
+          <motion.div whileTap={{ scale: 0.9 }}>
             <Logo>Amir</Logo>
-          </LogoContainer>
-        </Link>
-      </motion.div>
+          </motion.div>
+        </LogoContainer>
+      </Link>
       <Link href='/about'>
         <Underline style={{ width: '59px' }}>About</Underline>
       </Link>

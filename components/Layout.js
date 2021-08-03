@@ -104,32 +104,13 @@ export default function App({ children, colorTheme, setColorTheme, colors }) {
         <title>Amir Sigari</title>
         <meta name='description' content='Your Boy Amir' />
         <link rel='icon' type='image/png' sizes='16x16' href='/another.svg' />
-        <link
-          href='https://fonts.googleapis.com/css2?family=East+Sea+Dokdo&display=swap'
-          rel='stylesheet'
-        ></link>
-        <link
-          href='https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap'
-          rel='stylesheet'
-        ></link>
-        <link
-          href='https://fonts.googleapis.com/css2?family=East+Sea+Dokdo&display=swap'
-          rel='stylesheet'
-        ></link>
-        <link
-          href='https://fonts.googleapis.com/css2?family=Magra&display=swap'
-          rel='stylesheet'
-        ></link>
 
-        <link
-          href='https://fonts.googleapis.com/css2?family=Pacifico&display=swap'
-          rel='stylesheet'
-        ></link>
-        <link
-          href='https://fonts.googleapis.com/css2?family=PT+Sans+Caption&display=swap'
-          rel='stylesheet'
-        ></link>
-        <link
+
+        
+
+        
+        
+        {/* <link
           href='https://fonts.googleapis.com/css2?family=Raleway&display=swap'
           rel='stylesheet'
         ></link>
@@ -212,7 +193,7 @@ export default function App({ children, colorTheme, setColorTheme, colors }) {
         <link
           href='https://fonts.googleapis.com/css2?family=Amiri&display=swap'
           rel='stylesheet'
-        ></link>
+        ></link> */}
       </Head>
 
       <Main>
@@ -230,7 +211,20 @@ export default function App({ children, colorTheme, setColorTheme, colors }) {
           </svg>
         </Wave>
         <HeadHolder>
+        <motion.div
+    drag
+    dragConstraints={{
+      top: -50,
+      left: -50,
+      right: 50,
+      bottom: 50,
+    }}
+  /> 
+  
           <HeadContainer setColorTheme={setColorTheme} colors={colors} />
+  
+
+
         </HeadHolder>
 
         <AnimatePresence>

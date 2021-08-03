@@ -1,5 +1,5 @@
 import { createGlobalStyle, ThemeProvider } from 'styled-components'
-
+import "./_app.css";
 import Layout from '../components/Layout'
 
 import { useState, useEffect } from 'react'
@@ -67,18 +67,7 @@ const colors = [
 ]
 
 export default function App({ Component, pageProps }) {
-  const [theme, setTheme] = useState('dark')
-  const [time, setTime] = useState(0)
-
-  const [colorTheme, setColorTheme] = useState(1)
-
-  const toggleTheme = () => {
-    theme == 'light' ? setTheme('dark') : setTheme('light')
-  }
-
-  const setColor = colorId => {
-    setColorTheme(colorTheme[colorId])
-  }
+  const [colorTheme, setColorTheme] = useState(20)
 
   // useEffect(() => {
   //   const timer = setTimeout(() => {
@@ -92,17 +81,11 @@ export default function App({ Component, pageProps }) {
   //     clearTimeout(timer)
   //   }
   // }, [time])
-  console.log(themes[theme])
-  console.log(colors[colorTheme])
   return (
     <>
       <GlobalStyle />
-      <ThemeProvider
-        // theme={themes[theme]}
-        theme={colors[colorTheme]}
-      >
+      <ThemeProvider theme={colors[colorTheme]}>
         <Layout
-          toggleTheme={toggleTheme}
           colorTheme={colorTheme}
           setColorTheme={setColorTheme}
           colors={colors}
