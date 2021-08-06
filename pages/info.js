@@ -47,7 +47,7 @@ const LinkButton = ({ children, icon, link, onClick }) => (
   </motion.a>
 )
 
-function info() {
+function Info() {
   const [showEmail, setShowEmail] = useState(false)
 
   return (
@@ -101,7 +101,7 @@ function info() {
   )
 }
 
-export default info
+export default Info
 
 const InnerButton = styled.div`
   display: flex;
