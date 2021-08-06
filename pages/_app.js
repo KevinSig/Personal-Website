@@ -11,7 +11,7 @@ body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-    
+  color:#31363C;
 }
 a {
   color: inherit;
@@ -60,7 +60,7 @@ const colors = [
   { id: 17, color: '#D62839', font: 'Anton' },
   { id: 18, color: '#F21B3F', font: 'Fira Code' },
   { id: 19, color: '#96E8BC', font: 'Pattaya' },
-  { id: 20, color: '#4ECDC4', font: 'Titan One' },
+  { id: 20, color: '#4ECDC4', font: 'Titan One', comp:"##68b4af" },
   { id: 21, color: '#DE6449', font: 'Wire One' },
   { id: 22, color: '#ED1C24', font: 'Permanent Marker' },
   { id: 23, color: '#70CAD1', font: 'Grenze Gotisch' },
@@ -69,18 +69,6 @@ const colors = [
 export default function App({ Component, pageProps }) {
   const [colorTheme, setColorTheme] = useState(20)
 
-  // useEffect(() => {
-  //   const timer = setTimeout(() => {
-  //     setTime(time + 1)
-  //     let number = Math.floor(Math.random() * 100 + 1)
-  //     if (number === 5) {
-  //       toggleTheme()
-  //     }
-  //   }, 1000)
-  //   return () => {
-  //     clearTimeout(timer)
-  //   }
-  // }, [time])
   return (
     <>
       <GlobalStyle />

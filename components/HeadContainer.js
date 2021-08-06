@@ -7,7 +7,7 @@ import { motion } from 'framer-motion'
 
 const Box = styled(motion.div)`
   display: flex;
-
+  /* margin-top: 88px; */
   width: 90px;
   height: 90px;
   border-radius: 50%;
@@ -68,7 +68,7 @@ const container = {
   },
 }
 
-function HeadContainer({ setColorTheme, colors }) {
+function HeadContainer({ setColorTheme, colors, }) {
   const themeRandomizer = () => {
     let number = Math.floor(Math.random() * colors.length)
     setColorTheme(number)
@@ -81,9 +81,16 @@ function HeadContainer({ setColorTheme, colors }) {
       variants={container}
       initial='hidden'
       animate='show'
+      
     >
       <InnerCircle>
-        <Image width='100px' height='100px' src={Head} />
+        <Image
+          width='100px'
+          height='100px'
+          src={Head}
+          placeholder='blur'
+          priority='true'
+        />
       </InnerCircle>
     </Box>
   )

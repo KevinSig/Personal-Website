@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
 
+import { LogoContainer } from '../components'
 const Container = styled.div`
   height: 64px;
   display: flex;
@@ -74,20 +75,6 @@ const Logo = styled.div`
   border-radius: 60px 30px 60px 30px;
   transition: all 0.3s ease-in-out;
 `
-const LogoContainer = styled.a`
-  user-select: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  :hover {
-    cursor: pointer;
-    ${Logo} {
-      transition: all 0.3s ease-in-out;
-      opacity: 0.8;
-    }
-  }
-`
 
 function NavigationBar() {
   return (
@@ -99,14 +86,14 @@ function NavigationBar() {
           </motion.div>
         </LogoContainer>
       </Link>
-      <Link href='/about'>
-        <Underline style={{ width: '59px' }}>About</Underline>
-      </Link>
-      <Link href='/blog'>
-        <Underline style={{ width: '51px' }}>Blog</Underline>
+      <Link href='/info'>
+        <Underline style={{ width: '45px' }}>Info</Underline>
       </Link>
       <Link href='/goodies'>
-        <Underline style={{ width: '89px' }}>Gooodies</Underline>
+        <Underline style={{ width: '90px' }}>Gooodies</Underline>
+      </Link>
+      <Link href='/blog'>
+        <Underline style={{ width: '45px' }}>Blog</Underline>
       </Link>
     </Container>
   )

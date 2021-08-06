@@ -4,7 +4,12 @@ import styled, { keyframes } from 'styled-components'
 import NavigationBar from './NavigationBar'
 import HeadContainer from './HeadContainer'
 import React from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
+import {
+  AnimatePresence,
+  motion,
+  useMotionValue,
+  useTransform,
+} from 'framer-motion'
 
 const Footer = styled.footer`
   width: 100%;
@@ -89,111 +94,27 @@ const Text = styled.a`
 
 const HeadHolder = styled(motion.div)`
   display: flex;
-  align-items: center;
+  
+  align-items: flex-start;
   justify-content: center;
   position: absolute;
   top: 88px;
-  left: 50%;
-  margin-left: -55px;
+  /* left: 50%; */
+  /* margin-left: -55px; */
+
+
+  /* perspective: -45; */
 `
 
 export default function App({ children, colorTheme, setColorTheme, colors }) {
+
+
   return (
     <Wrapper>
       <Head>
         <title>Amir Sigari</title>
         <meta name='description' content='Your Boy Amir' />
         <link rel='icon' type='image/png' sizes='16x16' href='/another.svg' />
-
-
-        
-
-        
-        
-        {/* <link
-          href='https://fonts.googleapis.com/css2?family=Raleway&display=swap'
-          rel='stylesheet'
-        ></link>
-        <link
-          href='https://fonts.googleapis.com/css2?family=Montserrat&display=swap'
-          rel='stylesheet'
-        ></link>
-        <link
-          href='https://fonts.googleapis.com/css2?family=Caveat&display=swap'
-          rel='stylesheet'
-        ></link>
-        <link
-          href='https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap'
-          rel='stylesheet'
-        ></link>
-        <link
-          href='https://fonts.googleapis.com/css2?family=Roboto&display=swap'
-          rel='stylesheet'
-        ></link>
-        <link
-          href='https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap'
-          rel='stylesheet'
-        ></link>
-        <link
-          href='https://fonts.googleapis.com/css2?family=Carter+One&display=swap'
-          rel='stylesheet'
-        ></link>
-        <link
-          href='https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap'
-          rel='stylesheet'
-        ></link>
-        <link
-          href='https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&display=swap'
-          rel='stylesheet'
-        ></link>
-        <link
-          href='https://fonts.googleapis.com/css2?family=Staatliches&display=swap'
-          rel='stylesheet'
-        ></link>
-        <link
-          href='https://fonts.googleapis.com/css2?family=Helvetica&display=swap'
-          rel='stylesheet'
-        ></link>
-        <link
-          href='https://fonts.googleapis.com/css2?family=Ubuntu&display=swap'
-          rel='stylesheet'
-        ></link>
-        <link
-          href='https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap'
-          rel='stylesheet'
-        ></link>
-        <link
-          href='https://fonts.googleapis.com/css2?family=Anton&display=swap'
-          rel='stylesheet'
-        ></link>
-        <link
-          href='https://fonts.googleapis.com/css2?family=Fira+Code&display=swap'
-          rel='stylesheet'
-        ></link>
-        <link
-          href='https://fonts.googleapis.com/css2?family=Pattaya&display=swap'
-          rel='stylesheet'
-        ></link>
-        <link
-          href='https://fonts.googleapis.com/css2?family=Titan+One&display=swap'
-          rel='stylesheet'
-        ></link>
-        <link
-          href='https://fonts.googleapis.com/css2?family=Wire+One&display=swap'
-          rel='stylesheet'
-        ></link>
-        <link
-          href='https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap'
-          rel='stylesheet'
-        ></link>
-        <link
-          href='https://fonts.googleapis.com/css2?family=Grenze+Gotisch&display=swap'
-          rel='stylesheet'
-        ></link>
-        <link
-          href='https://fonts.googleapis.com/css2?family=Amiri&display=swap'
-          rel='stylesheet'
-        ></link> */}
       </Head>
 
       <Main>
@@ -210,21 +131,8 @@ export default function App({ children, colorTheme, setColorTheme, colors }) {
             <path d='M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z'></path>
           </svg>
         </Wave>
-        <HeadHolder>
-        <motion.div
-    drag
-    dragConstraints={{
-      top: -50,
-      left: -50,
-      right: 50,
-      bottom: 50,
-    }}
-  /> 
-  
+        <HeadHolder >
           <HeadContainer setColorTheme={setColorTheme} colors={colors} />
-  
-
-
         </HeadHolder>
 
         <AnimatePresence>

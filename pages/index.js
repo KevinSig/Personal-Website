@@ -2,8 +2,9 @@ import { createClient } from 'contentful'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import { motion } from 'framer-motion'
 import styled from 'styled-components'
+import { Title, TitleContainer } from '../components'
 
-const Test = styled.div`
+const Wrapper = styled.div`
   height: 100%;
   display: flex;
   width: 50%;
@@ -16,29 +17,14 @@ const Test = styled.div`
     display: none;
   }
 `
-const Wrapper = styled(motion.div)`
+const Container = styled(motion.div)`
   display: flex;
   flex-direction: column;
   height: 100%;
   width: 100%;
   justify-content: flex-start;
-
   margin: 0px;
   padding: 0px;
-`
-
-const TitleContainer = styled(motion.div)`
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100px;
-`
-
-const Title = styled(motion.h1)`
-  color: ${props => props.theme.color};
-  transition: all 0.5s ease-in-out;
-  font-family: ${props => props.theme.font};
 `
 
 const container = {
@@ -80,16 +66,16 @@ function Home({ aboutMe }) {
   const { body, title } = aboutMe[0].fields
 
   return (
-    <Test>
-      <Wrapper key={123}>
+    <Wrapper>
+      <Container key={123}>
         <TitleContainer variants={container} initial='hidden' animate='visible'>
           <Title>{title}</Title>
         </TitleContainer>
         <motion.div variants={animateBody} initial='hidden' animate='visible'>
           {documentToReactComponents(body)}
         </motion.div>
-      </Wrapper>
-    </Test>
+      </Container>
+    </Wrapper>
   )
 }
 
